@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled2/shared/usernames.dart';
 
 class Login extends StatefulWidget {
   Login({super.key});
@@ -40,56 +41,10 @@ class LoginState extends State<Login> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(
-              child: Container(
-                  margin: const EdgeInsets.only(bottom: 90),
-                  width: 200,
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.red,
-                      border: Border.all(width: 4, color: Colors.white)),
-                  child: TextFormField(
-                    cursorColor: Colors.white,
-                    initialValue: "X Player",
-                    maxLength: 10,
-                    textInputAction: TextInputAction.done,
-                    onSaved: (text) {
-                      Login.player1 = text;
-                      print(Login.player1);
-                    },
-                    decoration: const InputDecoration(
-                        prefixIcon: Icon(Icons.person, color: Colors.white)),
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20),
-                  )),
+              child:Usernames(player: Login.player1)
             ),
             Center(
-              child: Container(
-                  margin: const EdgeInsets.only(bottom: 90),
-                  width: 200,
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.red,
-                      border: Border.all(width: 4, color: Colors.white)),
-                  child: TextFormField(
-                    cursorColor: Colors.white,
-                    initialValue: "O Player",
-                    maxLength: 10,
-                    textInputAction: TextInputAction.done,
-                    onSaved: (text) {
-                      Login.player2 = text;
-                      print(Login.player2);
-                    },
-                    decoration: const InputDecoration(
-                        prefixIcon: Icon(Icons.person, color: Colors.white)),
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20),
-                  )),
+              child: Usernames(player: Login.player2,)
             ),
             InkWell(
               onTap: send,

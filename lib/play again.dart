@@ -1,5 +1,7 @@
+// ignore_for_file: avoid_unnecessary_containers, must_be_immutable, use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
-import 'package:untitled2/checker.dart';
+import 'package:untitled2/logic/checker.dart';
 
 class Repeat extends StatelessWidget {
   CheckerState check = CheckerState();
@@ -18,15 +20,15 @@ class Repeat extends StatelessWidget {
                   colorFilter:
                       ColorFilter.mode(Colors.white10, BlendMode.lighten))),
           child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.blue
             ),
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children:[ Text("The winner is" + check.winner),
+                  children:[ Text("The winner is${check.winner}"),
                     InkWell(
-                  child: Text( "click here to play again" ),
+                  child: const Text( "click here to play again" ),
                       onTap: (){
                     Navigator.of(context).pop();
                       },

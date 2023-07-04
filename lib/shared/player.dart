@@ -22,7 +22,7 @@ class PLayer_icon extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
-              color: Colors.red,
+              color: Color.fromARGB(255, 54, 152, 244),
               border: Border.all(width: 4, color: playerColor )),
           child: Image.asset(img,
               fit: BoxFit.scaleDown, color: Colors.white),
@@ -31,7 +31,7 @@ class PLayer_icon extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              color: Colors.red,
+              color: Color.fromARGB(255, 54, 152, 244),
               border: Border.all(width: 4, color: playerColor)),
           child: Text(player,
               style:  const TextStyle(

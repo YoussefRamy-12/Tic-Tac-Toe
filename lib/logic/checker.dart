@@ -1,3 +1,6 @@
+// ignore_for_file: non_constant_identifier_names, avoid_print
+
+import 'package:untitled2/logic/random.dart';
 import 'package:untitled2/screens/login.dart';
 import 'package:flutter/material.dart';
 
@@ -32,7 +35,7 @@ class CheckerState extends State<Checker> {
     playerColor = Colors.white;
     playerColor2 = Colors.white;
     firstPlayer = true;
-    winner = " Press to Play ";
+    winner = "Press to Play";
     pl = 0;
     counter = 0;
   }
@@ -67,9 +70,6 @@ class CheckerState extends State<Checker> {
         game[0] == game[2] &&
         game[0] != 0 &&
         counter >= 5) {
-          setState(() {
-            
-          });
       return 1;
     } else if (game[3] == game[4] &&
         game[3] == game[5] &&
@@ -119,12 +119,35 @@ class CheckerState extends State<Checker> {
     }
   }
 
+  bool FirstPlayer() {
+    int rand = RandomNum();
+    if (winner == "Press to Play") {
+      if (rand == 0) {
+        print(rand);
+        firstPlayer = false;
+        playerColor2 = const Color.fromARGB(255, 3, 142, 7);
+        playerColor = Colors.white;
+        winner = Login.player2 + " start";
+        
+      } else if (rand == 1) {
+        print(rand);
+        firstPlayer = true;
+        playerColor2 = Colors.white;
+        playerColor = const Color.fromARGB(255, 3, 142, 7);
+        winner = Login.player1 + " start";
+       
+      }
+       return false;
+    }
+    return true;
+  }
+
   void press(int n) {
     if (firstPlayer == true) {
       game[n] = 1;
       sympols[n] = const AssetImage('images/close.png');
       firstPlayer = false;
-      playerColor2 = Colors.green;
+      playerColor2 = const Color.fromARGB(255, 3, 142, 7);
       playerColor = Colors.white;
       counter++;
     } else {
@@ -132,23 +155,37 @@ class CheckerState extends State<Checker> {
       sympols[n] = const AssetImage('images/o.png');
       firstPlayer = true;
       playerColor2 = Colors.white;
-      playerColor = Colors.green;
+      playerColor = const Color.fromARGB(255, 3, 142, 7);
       counter++;
     }
     if (check_win() == 1 && firstPlayer == false) {
-      winner = Login.player1 + " Won";
+      winner = Login.player1 + " won";
+      playerColor2 = Colors.white;
+      playerColor = const Color.fromARGB(255, 3, 142, 7);
     } else if (check_win() == 1 && firstPlayer == true) {
-      winner = Login.player2 + " Won";
-    } else if (check_win() == 0) {
-      winner = "play";
+      winner = Login.player2 + " won";
+      playerColor2 = const Color.fromARGB(255, 3, 142, 7);
+      playerColor = Colors.white;
+    } else if (check_win() == 0 && firstPlayer == true) {
+      winner = Login.player1 + " turn";
+    } else if (check_win() == 0 && firstPlayer == false) {
+      winner = Login.player2 + " turn";
     } else if (check_win() == -1) {
       winner = "draw";
+      playerColor = Colors.white;
+      playerColor2 = Colors.white;
     }
+  }
+
+  bool endGame() {
+   if (winner !=Login.player1 + " won" && winner!=Login.player2 + " won" &&  winner != "draw" && winner != "Press to Play") {
+    return false;
+   }
+    return true;
   }
 
   @override
   Widget build(BuildContext context) {
-   
     throw UnimplementedError();
   }
 }

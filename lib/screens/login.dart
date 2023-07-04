@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:untitled2/shared/usernames.dart';
 
 class Login extends StatefulWidget {
   Login({super.key});
@@ -14,7 +13,7 @@ class Login extends StatefulWidget {
 class LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
-    GlobalKey<FormState> formstate =  GlobalKey<FormState>();
+    GlobalKey<FormState> formstate = GlobalKey<FormState>();
     send() {
       var formdata = formstate.currentState;
       formdata?.save();
@@ -26,8 +25,8 @@ class LoginState extends State<Login> {
     return Scaffold(
         body: Center(
             child: Container(
-              margin: EdgeInsets.only(top: 30),
-              width: double.maxFinite,
+      margin: EdgeInsets.only(top: 30),
+      width: double.maxFinite,
       height: double.maxFinite,
       decoration: const BoxDecoration(
           image: DecorationImage(
@@ -40,20 +39,78 @@ class LoginState extends State<Login> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Center(
-              child:Usernames(player: Login.player1)
-            ),
-            Center(
-              child: Usernames(player: Login.player2,)
+            Container(
+                margin: const EdgeInsets.only(bottom: 90),
+                width: 200,
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromARGB(255, 54, 152, 244),
+                    border: Border.all(width: 4, color: Colors.white)),
+                child: TextFormField(
+                  onTapOutside: (event) {
+                    FocusManager.instance.primaryFocus?.unfocus();
+                  },
+                  cursorColor: Colors.white,
+                  maxLength: 10,
+                  textInputAction: TextInputAction.done,
+                  onSaved: (text) {
+                    Login.player1 = text;
+                  },
+                  validator: (text) {
+                    if (text == null || text.isEmpty) {
+                      return 'Please enter some text';
+                    }
+                    return null;
+                  },
+                  decoration: const InputDecoration(
+                      hintText: 'player name',
+                      hintStyle:
+                          TextStyle(color: Color.fromARGB(161, 255, 255, 255)),
+                      prefixIcon: Icon(Icons.person, color: Colors.white)),
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                )),
+            Container(
+              margin: const EdgeInsets.only(bottom: 90),
+              width: 200,
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Color.fromARGB(255, 54, 152, 244),
+                  border: Border.all(width: 4, color: Colors.white)),
+              child: TextFormField(
+                cursorColor: Colors.white,
+                maxLength: 10,
+                textInputAction: TextInputAction.done,
+                onSaved: (text) {
+                  Login.player2 = text;
+                },
+                decoration: const InputDecoration(
+                    hintText: 'player name',
+                    hintStyle:
+                        TextStyle(color: Color.fromARGB(161, 255, 255, 255)),
+                    prefixIcon: Icon(Icons.person, color: Colors.white)),
+                style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20),
+              ),
             ),
             InkWell(
-              onTap: send,
+              onTap: 
+                 
+                  send
+                
+              ,
               child: Container(
-                padding: const EdgeInsets.all(9),
+                  padding: const EdgeInsets.all(9),
                   decoration: BoxDecoration(
-                            color: Colors.red,
-                            border: Border.all(width: 4, color: Colors.white),
-                            borderRadius: BorderRadius.circular(15)),
+                      color: Color.fromARGB(255, 54, 152, 244),
+                      border: Border.all(width: 4, color: Colors.white),
+                      borderRadius: BorderRadius.circular(15)),
                   child: const Text("let's play ! ",
                       style: TextStyle(
                           fontSize: 40,

@@ -1,9 +1,12 @@
+
 import 'package:flutter/material.dart';
-import 'package:untitled2/screens/home%20page.dart';
-import 'package:untitled2/screens/login.dart';
-import 'package:untitled2/screens/multiplayer_page.dart';
-import 'package:untitled2/play%20again.dart';
-import 'package:untitled2/screens/singleplayer_page.dart';
+
+import 'play again.dart';
+import 'screens/home page.dart';
+import 'screens/login.dart';
+import 'screens/multiplayer_page.dart';
+import 'screens/singleplayer_page.dart';
+
 class MyApp extends StatelessWidget{
   const MyApp({super.key});
 

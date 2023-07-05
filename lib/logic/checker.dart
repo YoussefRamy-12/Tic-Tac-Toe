@@ -1,8 +1,10 @@
 // ignore_for_file: non_constant_identifier_names, avoid_print
 
-import 'package:untitled2/logic/random.dart';
-import 'package:untitled2/screens/login.dart';
+
+import 'package:Tic_Tac_Toe/logic/random.dart';
 import 'package:flutter/material.dart';
+
+import '../screens/login.dart';
 
 class Checker extends StatefulWidget {
   const Checker({super.key});

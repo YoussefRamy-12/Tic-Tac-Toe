@@ -1,7 +1,8 @@
 // ignore_for_file: avoid_unnecessary_containers, must_be_immutable, use_key_in_widget_constructors
 
+import 'package:Tic_Tac_Toe/logic/checker.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled2/logic/checker.dart';
+
 
 class Repeat extends StatelessWidget {
   CheckerState check = CheckerState();

@@ -1,7 +1,8 @@
 // ignore_for_file: must_be_immutable, camel_case_types, non_constant_identifier_names, prefer_typing_uninitialized_variables
 
+import 'package:Tic_Tac_Toe/logic/checker.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled2/logic/checker.dart';
+
 
 class PLayer_icon extends StatelessWidget {
 

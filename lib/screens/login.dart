@@ -36,8 +36,8 @@ class LoginState extends State<Login> {
                   ColorFilter.mode(Colors.white10, BlendMode.lighten))),
       child: Form(
         key: formstate,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
+          padding: EdgeInsets.only(bottom: 50 ,left: 60 ,right:60 ,top: 100),
           children: [
             Container(
                 margin: const EdgeInsets.only(bottom: 90),
@@ -56,12 +56,6 @@ class LoginState extends State<Login> {
                   textInputAction: TextInputAction.done,
                   onSaved: (text) {
                     Login.player1 = text;
-                  },
-                  validator: (text) {
-                    if (text == null || text.isEmpty) {
-                      return 'Please enter some text';
-                    }
-                    return null;
                   },
                   decoration: const InputDecoration(
                       hintText: 'player name',

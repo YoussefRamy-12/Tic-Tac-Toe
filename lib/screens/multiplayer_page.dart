@@ -1,7 +1,8 @@
+import 'package:Tic_Tac_Toe/logic/checker.dart';
+import 'package:Tic_Tac_Toe/screens/login.dart';
+import 'package:Tic_Tac_Toe/shared/player.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled2/logic/checker.dart';
-import 'package:untitled2/screens/login.dart';
-import 'package:untitled2/shared/player.dart';
+
 
 class Multiplayer extends StatefulWidget {
   const Multiplayer({super.key});
@@ -13,6 +14,7 @@ class Multiplayer extends StatefulWidget {
 }
 
 class MultiPlayerState extends State<Multiplayer> {
+  
   CheckerState check = CheckerState();
   var player1 = Login.player1;
 
@@ -36,13 +38,9 @@ class MultiPlayerState extends State<Multiplayer> {
                 fit: BoxFit.cover,
                 colorFilter:
                     ColorFilter.mode(Colors.white10, BlendMode.lighten))),
-        child: Column(
-          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        child: ListView(
+          physics:const NeverScrollableScrollPhysics()  ,
           children: [
-            ///////////////////////////////////////////////////////////
-            const SizedBox(
-              height: 30,
-            ),
             ////////////////////////////// player icons //////////////////////////
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
-  Login({super.key});
+  const Login({super.key});
   static var player1;
   static var player2;
   @override
@@ -25,7 +25,7 @@ class LoginState extends State<Login> {
     return Scaffold(
         body: Center(
             child: Container(
-      margin: EdgeInsets.only(top: 30),
+      margin: const EdgeInsets.only(top: 30),
       width: double.maxFinite,
       height: double.maxFinite,
       decoration: const BoxDecoration(
@@ -45,7 +45,7 @@ class LoginState extends State<Login> {
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Color.fromARGB(255, 54, 152, 244),
+                    color: const Color.fromARGB(255, 54, 152, 244),
                     border: Border.all(width: 4, color: Colors.white)),
                 child: TextFormField(
                   onTapOutside: (event) {
@@ -79,7 +79,7 @@ class LoginState extends State<Login> {
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: Color.fromARGB(255, 54, 152, 244),
+                  color: const Color.fromARGB(255, 54, 152, 244),
                   border: Border.all(width: 4, color: Colors.white)),
               child: TextFormField(
                 cursorColor: Colors.white,
@@ -108,7 +108,7 @@ class LoginState extends State<Login> {
               child: Container(
                   padding: const EdgeInsets.all(9),
                   decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 54, 152, 244),
+                      color: const Color.fromARGB(255, 54, 152, 244),
                       border: Border.all(width: 4, color: Colors.white),
                       borderRadius: BorderRadius.circular(15)),
                   child: const Text("let's play ! ",

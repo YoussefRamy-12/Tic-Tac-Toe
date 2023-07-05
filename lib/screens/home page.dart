@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
             child: Container(
-              margin: EdgeInsets.only(top: 30),
+              margin: const EdgeInsets.only(top: 30),
               width: double.maxFinite,
       height: double.maxFinite,
       decoration: const BoxDecoration(
@@ -24,7 +26,7 @@ class HomePage extends StatelessWidget {
                 decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
                     borderRadius: BorderRadius.circular(30),
-                    color: Colors.red,
+                    color: const Color.fromARGB(255, 54, 152, 244),
                     border: Border.all(color: Colors.white, width: 4)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -50,7 +52,7 @@ class HomePage extends StatelessWidget {
                 decoration: BoxDecoration(
                     shape: BoxShape.rectangle,
                     borderRadius: BorderRadius.circular(30),
-                    color: Colors.red,
+                    color: const Color.fromARGB(255, 54, 152, 244),
                     border: Border.all(color: Colors.white, width: 4)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,

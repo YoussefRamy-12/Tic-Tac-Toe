@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SinglePlayer extends StatefulWidget {
+  const SinglePlayer({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return SinglePlayerState();
@@ -8,7 +10,7 @@ class SinglePlayer extends StatefulWidget {
 }
 
 class SinglePlayerState extends State<SinglePlayer> {
-  var tempColor = new List.filled(9, Colors.transparent);
+  var tempColor = List.filled(9, Colors.transparent);
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +20,8 @@ class SinglePlayerState extends State<SinglePlayer> {
               onPressed: (){
                 showDialog(context: context, barrierDismissible: false , builder: (BuildContext context){
                   return AlertDialog(
-                    title: Text(""),
-                    content: SingleChildScrollView(
+                    title: const Text(""),
+                    content: const SingleChildScrollView(
                       child: ListBody(children: [
                         Text("we have told you soooon")
                       ],),
@@ -27,13 +29,13 @@ class SinglePlayerState extends State<SinglePlayer> {
                     actions: [
                       TextButton(onPressed: (){
                         Navigator.of(context).pop();
-                      }, child: Text("okay"))
+                      }, child: const Text("okay"))
                     ],
 
                   );
                 });
                 },
-              child: Text("soon"),
+              child: const Text("soon"),
             )
         ));
   }

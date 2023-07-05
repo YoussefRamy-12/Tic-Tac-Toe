@@ -5,16 +5,18 @@ import 'package:untitled2/screens/multiplayer_page.dart';
 import 'package:untitled2/play%20again.dart';
 import 'package:untitled2/screens/singleplayer_page.dart';
 class MyApp extends StatelessWidget{
+  const MyApp({super.key});
+
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: const HomePage(),
         routes: {
-        "singlePlayer" : (context) => SinglePlayer() ,
+        "singlePlayer" : (context) => const SinglePlayer() ,
           "multiPlayer" : (context) => const Multiplayer(),
-          "Login" : (context) =>  Login(),
+          "Login" : (context) =>  const Login(),
           "playagain" : (context) => Repeat()
     },
     );

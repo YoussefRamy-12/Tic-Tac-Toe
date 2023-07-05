@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:untitled2/logic/checker.dart';
-import 'package:untitled2/logic/random.dart';
 import 'package:untitled2/screens/login.dart';
 import 'package:untitled2/shared/player.dart';
 
@@ -51,15 +50,18 @@ class MultiPlayerState extends State<Multiplayer> {
                 PLayer_icon(
                     img: 'images/close.png',
                     player: Login.player1,
-                    playerColor: check.playerColor),
+                    playerColor: check.playerColor,
+                    score: check.player1_score),
                 PLayer_icon(
-                    img: 'images/o.png',
-                    player: Login.player2,
-                    playerColor: check.playerColor2),
+                  img: 'images/o.png',
+                  player: Login.player2,
+                  playerColor: check.playerColor2,
+                  score: check.player2_score,
+                ),
               ],
             ),
             const SizedBox(
-              height: 30,
+              height: 20,
             ),
             ////////////////// the winner panel ///////////////////////
             Container(
@@ -68,7 +70,7 @@ class MultiPlayerState extends State<Multiplayer> {
                   child: Container(
                     width: 240,
                     decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 54, 152, 244),
+                        color: const Color.fromARGB(255, 54, 152, 244),
                         border: Border.all(width: 4, color: Colors.white),
                         borderRadius: BorderRadius.circular(15)),
                     child: Text(check.winner,
@@ -88,7 +90,7 @@ class MultiPlayerState extends State<Multiplayer> {
 
             /////////////////////
             const SizedBox(
-              height: 30,
+              height: 20,
             ),
 
             /////////////////////// the Grid table 3x3/////////////////////
